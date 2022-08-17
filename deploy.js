@@ -3,7 +3,7 @@ const Web3 = require("web3");
 const { abi, evm } = require("./compile");
 
 // Importing and configuring our .env file that we use to securely store our environment variables
-import dotenv from "dotenv";
+const dotenv = require("dotenv");
 dotenv.config();
 
 const provider = new HDWalletProvider(
