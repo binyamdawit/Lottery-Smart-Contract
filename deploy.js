@@ -2,9 +2,13 @@ const HDWalletProvider = require("@truffle/hdwallet-provider");
 const Web3 = require("web3");
 const { abi, evm } = require("./compile");
 
+// Importing and configuring our .env file that we use to securely store our environment variables
+import dotenv from "dotenv";
+dotenv.config();
+
 const provider = new HDWalletProvider(
-  "wolf license layer board forward adjust brain jaguar atom face convince axis",
-  "https://rinkeby.infura.io/v3/886d89b4748e4a1b9ecdc56ae28643da"
+  process.env.PRIVATE_MNEMONIC,
+  process.env.PRIVATE_API
 );
 
 const web3 = new Web3(provider);
